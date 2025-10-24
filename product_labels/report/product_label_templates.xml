@@ -83,6 +83,10 @@
                                                         style="float: left; width: 138px; font-size: 13px; line-height: 1.0; vertical-align: top; text-align: left;">
                                                         <span t-field="label.product_id.name"
                                                             style="line-height: 1.0;" />
+                                                        <br />
+                                                        <span t-if="label.product_id.product_template_attribute_value_ids"
+                                t-esc="u', '.join(map(lambda x: x.attribute_line_id.attribute_id.name + u': ' + x.name, label.product_id.product_template_attribute_value_ids))"
+                                class="badge" />
                                                     </div>
                                                     <div
                                                         style="float: right; width: 46px; height: 46px;">
@@ -184,6 +188,10 @@
                                                         style="float: left; width: 138px; font-size: 13px; line-height: 1.0; vertical-align: top; text-align: left;">
                                                         <span t-field="label.product_id.name"
                                                             style="line-height: 1.0;" />
+                                                        <br />
+                                                        <span t-if="label.product_id.product_template_attribute_value_ids"
+                                t-esc="u', '.join(map(lambda x: x.attribute_line_id.attribute_id.name + u': ' + x.name, label.product_id.product_template_attribute_value_ids))"
+                                class="badge" />
                                                     </div>
                                                     <div
                                                         style="float: right; width: 46px; height: 46px;">
