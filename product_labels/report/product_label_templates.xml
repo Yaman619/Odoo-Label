@@ -145,7 +145,7 @@
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
                                                                     style="width: 14px; height: 14px;" />
                                                             </span>
-                                                            <t t-set="pricelist_id" t-value="1" />
+                                                            <t t-set="pricelist_id" t-value="18" />
                                                             <t t-set="pricelist_record"
                                                                 t-value="env['product.pricelist'].browse(pricelist_id)" />
                                                             <t t-set="prices_dict"
