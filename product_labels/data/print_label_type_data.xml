@@ -1,4 +1,6 @@
-<record id="type_product" model="print.label.type">
-    <field name="name">Products</field>
-    <field name="code" eval="'product.product'"/>
+<odoo noupdate="1">
+<record id="type_product" model="print.label.type" forcecreate="True">
+<field name="name">Products</field>
+<field name="code">product.product</field>
 </record>
+</odoo>
