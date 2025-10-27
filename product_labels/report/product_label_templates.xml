@@ -121,13 +121,13 @@
 
                                                 <!-- Prices -->
                                                 <div
-                                                    style="width: 100%; overflow: hidden; height: 60px !important; display: flex; align-items: flex-end;">
+                                                    style="width: 100%; overflow: hidden; height: 46px !important; display: flex; align-items: flex-end;">
                                                     <div
                                                         style="float: left; width: 35%; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
                                                         <div
                                                             style="width: 100%; font-size: 15px; font-weight: 900; line-height: 1.0; text-align: right; margin-bottom: 1px;">
                                                             <span>
-                                                                <p style="font-size: 14px;">WAS قبل</p>
+                                                                <p style="font-size: 14px; margin-bottom: 8px">WAS قبل</p>
                                                                 <img
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
                                                                     style="width: 12px; height: 12px;" />
@@ -138,9 +138,9 @@
                                                     <div
                                                         style="float: right; width: 65%; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
                                                         <div
-                                                            style="width: 100%; font-size: 20px; font-weight: 900; line-height: 1.0; text-align: right; margin-bottom: 1px;">
+                                                            style="width: 100%; font-size: 19px; font-weight: 900; line-height: 1.0; text-align: right; margin-bottom: 1px;">
                                                             <span>
-                                                                <p style="font-size: 14px;">NOW الأن</p>
+                                                                <p style="font-size: 14px; margin-bottom: 5px">NOW الأن</p>
                                                                 <img
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
                                                                     style="width: 14px; height: 14px;" />
