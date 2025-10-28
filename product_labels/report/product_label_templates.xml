@@ -118,7 +118,6 @@
                                                     </div>
                                                 </div>
 
-
                                                 <!-- Prices -->
                                                 <div
                                                     style="width: 100%; overflow: hidden; height: 46px !important; display: flex; align-items: flex-end;">
@@ -132,7 +131,7 @@
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
                                                                     style="width: 12px; height: 12px;" />
                                                             </span>
-                                                            <s t-field="label.product_id.lst_price" />
+                                                            <s t-esc="'%.2f' % label.product_id.lst_price" />
                                                         </div>
                                                     </div>
                                                     <div
@@ -150,7 +149,7 @@
                                                                 t-value="env['product.pricelist'].browse(pricelist_id)" />
                                                             <t t-set="prices_dict"
                                                                 t-value="pricelist_record._get_product_price(label.product_id, 1)" />
-                                                            <span t-esc="prices_dict" />
+                                                            <span t-esc="'%.2f' % prices_dict" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -246,7 +245,7 @@
                                                                 t-value="env['product.pricelist'].browse(pricelist_id)" />
                                                             <t t-set="prices_dict"
                                                                 t-value="pricelist_record._get_product_price(label.product_id, 1)" />
-                                                            <span t-esc="prices_dict" />
+                                                            <span t-esc="'%.2f' % prices_dict" />
                                                         </div>
                                                     </div>
                                                 </div>
