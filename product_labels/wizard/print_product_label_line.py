@@ -1,6 +1,5 @@
 from odoo import api, fields, models
 
-
 class PrintProductLabelLine(models.TransientModel):
     _name = "print.product.label.line"
     _description = 'Line with a Product Label Data'
@@ -8,15 +7,34 @@ class PrintProductLabelLine(models.TransientModel):
 
     sequence = fields.Integer(default=900)
     selected = fields.Boolean(string='Print', default=True)
-    wizard_id = fields.Many2one(comodel_name='print.product.label')  # Do not make required
+    wizard_id = fields.Many2one(comodel_name='print.product.label')
     product_id = fields.Many2one(comodel_name='product.product', required=True)
     barcode = fields.Char(compute='_compute_barcode')
     qty_initial = fields.Integer(string='Initial Qty', default=1)
     qty = fields.Integer(string='Label Qty', default=1)
     custom_value = fields.Char(help="This field can be filled manually to use in label templates.")
     company_id = fields.Many2one(comodel_name='res.company', compute='_compute_company_id')
-    # Allow users to specify a partner to use it on label templates
     partner_id = fields.Many2one(comodel_name='res.partner', readonly=False)
+
+    # --- NEW FIELDS FOR MULTI-LANGUAGE ---
+    product_name_en = fields.Char(compute='_compute_product_names', string='Product Name (EN)')
+    product_name_ar = fields.Char(compute='_compute_product_names', string='Product Name (AR)')
+    product_template_attribute_value_ids = fields.Many2many(
+        'product.template.attribute.value',
+        compute='_compute_product_template_attribute_values'
+    )
+
+    @api.depends('product_id')
+    def _compute_product_names(self):
+        for line in self:
+            if line.product_id:
+                line.product_name_en = line.product_id.with_context(lang='en_US').name
+                line.product_name_ar = line.product_id.with_context(lang='ar_001').name
+
+    @api.depends('product_id')
+    def _compute_product_template_attribute_values(self):
+        for line in self:
+            line.product_template_attribute_value_ids = line.product_id.product_template_attribute_value_ids
 
     @api.depends('wizard_id.company_id')
     def _compute_company_id(self):
