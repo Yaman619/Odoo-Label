@@ -77,25 +77,45 @@
                                             <td class="text-center"
                                                 style="padding: 0; margin: 0; border: 0;">
                                                 <!-- Name and logo -->
-                                                <div
-                                                    style="width: 188px; overflow: hidden; height: 42px; margin-bottom: 2px;">
-                                                    <div
-                                                        style="float: left; width: 138px; font-size: 13px; line-height: 1.0; vertical-align: top; text-align: left;">
-                                                        <span t-field="label.product_id.name"
-                                                            style="line-height: 1.0;" />
-                                                        <br />
-                                                        <span t-if="label.product_id.product_template_attribute_value_ids"
-                                t-esc="u', '.join(map(lambda x: x.attribute_line_id.attribute_id.name + u': ' + x.name, label.product_id.product_template_attribute_value_ids))"
-                                class="badge" />
-                                                    </div>
-                                                    <div
-                                                        style="float: right; width: 46px; height: 46px;">
-                                                        <img
-                                                            t-att-src="'/product_labels/static/src/img/logo.png'"
-                                                            style="width: 46px; height: 46px;" />
-                                                    </div>
-                                                </div>
+                                                <div style="width: 188px; overflow: hidden; height: 42px; margin-bottom: 2px;">
+    <div style="float: left; width: 138px; font-size: 11px; line-height: 1.0; vertical-align: top; text-align: left;">
 
+        <!-- English name -->
+<span t-esc="label.product_name_en"
+      style="font-weight: bold;
+             display: block;
+             width: 130px;
+             overflow: hidden;
+             white-space: nowrap;
+             text-overflow: ellipsis;
+             line-height: 1.1;" />
+
+<t t-if="label.product_name_ar and label.product_name_ar != label.product_name_en">
+    <span t-esc="label.product_name_ar"
+          style="direction: rtl;
+                 display: block;
+                 width: 130px;
+                 overflow: hidden;
+                 white-space: nowrap;
+                 text-overflow: ellipsis;
+                 font-size: 11px;
+                 line-height: 1.1;
+                 margin-top: 2px;" />
+</t>
+
+
+
+<span t-if="label.product_template_attribute_value_ids"
+      t-esc="', '.join(map(lambda x: x.attribute_line_id.attribute_id.name + ': ' + x.name, label.product_template_attribute_value_ids))"
+      class="badge" style="margin-top: 2px"/>
+
+    </div>
+
+    <div style="float: right; width: 46px; height: 46px;">
+        <img t-att-src="'/product_labels/static/src/img/logo.png'"
+             style="width: 46px; height: 46px;" />
+    </div>
+</div>
                                                 <!-- Barcode -->
                                                 <div
                                                     style="width: 100%; overflow: hidden; height: 48px !important; margin-bottom: 2px;">
@@ -117,6 +137,7 @@
                                                         </t>
                                                     </div>
                                                 </div>
+
 
                                                 <!-- Prices -->
                                                 <div
@@ -181,25 +202,45 @@
                                             <td class="text-center"
                                                 style="padding: 0; margin: 0; border: 0;">
                                                 <!-- Name and logo -->
-                                                <div
-                                                    style="width: 188px; overflow: hidden; height: 42px; margin-bottom: 2px;">
-                                                    <div
-                                                        style="float: left; width: 138px; font-size: 13px; line-height: 1.0; vertical-align: top; text-align: left;">
-                                                        <span t-field="label.product_id.name"
-                                                            style="line-height: 1.0;" />
-                                                        <br />
-                                                        <span t-if="label.product_id.product_template_attribute_value_ids"
-                                t-esc="u', '.join(map(lambda x: x.attribute_line_id.attribute_id.name + u': ' + x.name, label.product_id.product_template_attribute_value_ids))"
-                                class="badge" />
-                                                    </div>
-                                                    <div
-                                                        style="float: right; width: 46px; height: 46px;">
-                                                        <img
-                                                            t-att-src="'/product_labels/static/src/img/logo.png'"
-                                                            style="width: 46px; height: 46px;" />
-                                                    </div>
-                                                </div>
+                                                <div style="width: 188px; overflow: hidden; height: 42px; margin-bottom: 2px;">
+    <div style="float: left; width: 138px; font-size: 11px; line-height: 1.0; vertical-align: top; text-align: left;">
 
+        <!-- English name -->
+<span t-esc="label.product_name_en"
+      style="font-weight: bold;
+             display: block;
+             width: 130px;
+             overflow: hidden;
+             white-space: nowrap;
+             text-overflow: ellipsis;
+             line-height: 1.1;" />
+
+<t t-if="label.product_name_ar and label.product_name_ar != label.product_name_en">
+    <span t-esc="label.product_name_ar"
+          style="direction: rtl;
+                 display: block;
+                 width: 130px;
+                 overflow: hidden;
+                 white-space: nowrap;
+                 text-overflow: ellipsis;
+                 font-size: 11px;
+                 line-height: 1.1;
+                 margin-top: 2px;" />
+</t>
+
+
+
+<span t-if="label.product_template_attribute_value_ids"
+      t-esc="', '.join(map(lambda x: x.attribute_line_id.attribute_id.name + ': ' + x.name, label.product_template_attribute_value_ids))"
+      class="badge" style="margin-top: 2px"/>
+
+    </div>
+
+    <div style="float: right; width: 46px; height: 46px;">
+        <img t-att-src="'/product_labels/static/src/img/logo.png'"
+             style="width: 46px; height: 46px;" />
+    </div>
+</div>
                                                 <!-- Barcode -->
                                                 <div
                                                     style="width: 100%; overflow: hidden; height: 48px !important; margin-bottom: 2px;">
@@ -245,7 +286,7 @@
                                                                 t-value="env['product.pricelist'].browse(pricelist_id)" />
                                                             <t t-set="prices_dict"
                                                                 t-value="pricelist_record._get_product_price(label.product_id, 1)" />
-                                                            <span t-esc="'%.2f' % prices_dict" />
+                                                            <span t-esc="prices_dict" />
                                                         </div>
                                                     </div>
                                                 </div>
