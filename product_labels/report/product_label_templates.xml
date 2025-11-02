@@ -150,7 +150,7 @@
                                                                 <p style="font-size: 14px; margin-bottom: 8px">WAS قبل</p>
                                                                 <img
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
-                                                                    style="width: 12px; height: 12px;" />
+                                                                    style="width: 12px; height: 12px; margin-bottom: 3px;" />
                                                             </span>
                                                             <s t-esc="'%.2f' % label.product_id.lst_price" />
                                                         </div>
@@ -163,7 +163,7 @@
                                                                 <p style="font-size: 14px; margin-bottom: 5px">NOW الأن</p>
                                                                 <img
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
-                                                                    style="width: 14px; height: 14px;" />
+                                                                    style="width: 14px; height: 14px; margin-bottom: 3px;" />
                                                             </span>
                                                             <t t-set="pricelist_id" t-value="18" />
                                                             <t t-set="pricelist_record"
@@ -279,14 +279,14 @@
                                                             <span>
                                                                 <img
                                                                     t-att-src="'/product_labels/static/src/img/Dirham.png'"
-                                                                    style="width: 14px; height: 14px;" />
+                                                                    style="width: 14px; height: 14px; margin-bottom: 3px;" />
                                                             </span>
                                                             <t t-set="pricelist_id" t-value="1" />
                                                             <t t-set="pricelist_record"
                                                                 t-value="env['product.pricelist'].browse(pricelist_id)" />
                                                             <t t-set="prices_dict"
                                                                 t-value="pricelist_record._get_product_price(label.product_id, 1)" />
-                                                            <span t-esc="prices_dict" />
+                                                            <span t-esc="'%.2f' % prices_dict" />
                                                         </div>
                                                     </div>
                                                 </div>
